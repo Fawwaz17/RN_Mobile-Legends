@@ -1,14 +1,69 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Alert} from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
 
 class HomeScreen extends React.Component {
-  static navigationOptions = { navBarHidden : true};
+  hm()
+	{
+		Alert.alert("More Page Soon")
+
+	}
   render() {
     return (
+      <ScrollView>
       <View style={styles.container}>
-        <Text>Ini Home</Text>
+
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress ={() =>{this.hm()}}>
+        <Image
+           style={styles.Img}
+           source={require('/ML3/Assets/1.png')}
+        />
+      </TouchableOpacity>
+
       </View>
+      </ScrollView>
     );
   }
 }
@@ -24,7 +79,16 @@ class ProfileScreen extends React.Component {
   }
 }
 
-export default createBottomTabNavigator({
+export default class App extends Component<Props> {
+	static navigationOptions = { header: null };
+  render() {
+    return (
+			<BotNav/>
+		);
+	}
+}
+
+const BotNav = createBottomTabNavigator({
   Home: { screen: HomeScreen },
   Profile: { screen : ProfileScreen, header : null}
 });
@@ -47,4 +111,11 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  Img : {
+      alignItems : 'center',
+      marginTop : 10,
+      marginBottom : 10,
+      width : 300,
+      height : 74,
+    },
 });
