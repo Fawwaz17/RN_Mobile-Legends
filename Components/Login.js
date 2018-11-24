@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button, TextInput,TouchableOpacity, Image} from 'react-native';
-import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; 
+import {Platform, StyleSheet, View, TextInput,TouchableOpacity, Image} from 'react-native';
+import { Container, Header, Content, Button, Text } from 'native-base';
+import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 export default class Login extends Component<Props> {
 	static navigationOptions = { header: null };
@@ -21,11 +22,12 @@ export default class Login extends Component<Props> {
           placeholder ="    Password"
           onChangeText={(password) => this.setState({password})}
         />
-       <Button style={styles.Button}
-          title="				Login				"
-          onPress={() => {
-           this.props.navigation.navigate('Home')}}
-       />
+			 <Button
+			 success
+			 style={styles.Button}
+			 onPress={() => {this.props.navigation.navigate('Home')}}>
+            <Text style={styles.Font}>Login</Text>
+        </Button>
       </View>
     );
   }
@@ -44,8 +46,13 @@ const styles = StyleSheet.create({
       marginTop : 120,
     },
   Button : {
-  	backgroundColor : '#fff',
-  	color : '#fff',
-  	borderRadius : 10,
+  	backgroundColor : '#1d5464',
+		alignItems : 'center',
+		marginTop : 10,
+		marginLeft : 150,
+  },
+	Font : {
+		fontFamily : 'calibri',
+		fontSize : 14,
   }
 });
